@@ -92,8 +92,7 @@ class WhereAmI {
     ![command in quotes](https://user-images.githubusercontent.com/103291789/162632312-8fccf9c7-0414-4766-bb25-3fc45eafffae.jpeg)
     
 * Here are two examples of optimizing remote running:
-
-![optimizing remote running](https://user-images.githubusercontent.com/103291789/162632332-2f905c91-a831-48f4-a2e2-febd80283341.jpeg)
-
    * The first command copies `WhereAmI.java` to the server. The second command securely logs into the server, compiles and runs the file, and logs out.
    * The third command combines the first two commands into one line, as explained above.
+
+![optimizing remote running](https://user-images.githubusercontent.com/103291789/162632332-2f905c91-a831-48f4-a2e2-febd80283341.jpeg)
