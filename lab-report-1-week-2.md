@@ -45,16 +45,19 @@ class WhereAmI {
 }
 ```
 * Assuming you have Java installed, run this file on your computer (the client), using `javac` and `java` commands. You should get something like this: 
-**insert image here**
+![WhereAmI.java on client](https://user-images.githubusercontent.com/103291789/162601320-41baa400-7344-417d-8acb-bb61f4e30b67.jpeg)
+
 * From the directory where you made the `WhereAmI.java` file, run this command with your username: `scp WhereAmI.java cs15lsp22zz@ieng6.ucsd.edu:~/`. Enter your password when prompted. This copies the file to the server!
 * Using `ssh`, log into `ieng6` again, and run the file from there using `javac` and `java`. Now, you should get something like this: 
-**insert image here**
+![WhereAmI.java on server](https://user-images.githubusercontent.com/103291789/162601377-513e644e-48d5-44c3-b21a-b360c5c76129.jpeg)
+
 * To copy multiple files at once, just list the file names separated by spaces after the `scp` command and before the destination.
 
 
 ### 5. Setting an SSH Key
 * On your computer, run `ssh-keygen`. Copy and paste the file given in parentheses when prompted: 
-**insert image here**
+![ssh keygen](https://user-images.githubusercontent.com/103291789/162601404-f684e534-16f9-468b-a197-8110625cebf1.jpeg)
+
 * **Do NOT add a passphrase when prompted.** Just hit 'enter' when prompted both times.
     * You should get messages that indicate this process was successful, followed by a randomart image for the public key.
 * To copy the public key to the `.ssh` directory of your account on the `ieng6` server, do the following:
