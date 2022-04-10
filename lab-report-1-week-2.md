@@ -10,16 +10,16 @@
 
 ### 2. Remotely Connecting
 * Go to [this website](https://sdacs.ucsd.edu/~icc/index.php) to look up your CSE 15L username.
-* Then, in VSCode, open a terminal and use the command `ssh cs15lsp22xxx@ieng6.ucsd.edu`, with the `xxx` replaced with the letters in your own username.
+* Then, in VSCode, open a terminal and use the command `ssh cs15lsp22xxx@ieng6.ucsd.edu`, with the `xxx` replaced with the letters in your own username, to connect to the `ieng6` server.
 * Respond `yes` to the prompt asking if you want to continue connecting, and then enter your password.
 * Once you are connected, you should see something like this in your terminal: ![Successful Remote Connection](https://user-images.githubusercontent.com/103291789/162599627-65a638c8-611b-4673-b4b8-4b45c08877ac.jpeg) 
 
 
 ### 3. Trying Some Commands
 * Next, you can try running some basic UNIX commands from your VSCode terminal. For example:
-    * `cd ~` will change the directory back to your home directory
-    * `ls` will list the files in your current directory
-    * `ls -a` will list all files, including hidden ones, in your current directory
+    * `cd ~` will change the directory back to your home directory.
+    * `ls` will list the files in your current directory.
+    * `ls -a` will list all files, including hidden ones, in your current directory.
  * This is what I get when I run `ls` and `ls -a`:
 ![`ls` and `ls -a` commands](https://user-images.githubusercontent.com/103291789/162599771-a2fdc392-2744-48cf-a8c1-eab57c3056fb.jpeg)
 
@@ -29,15 +29,38 @@
     *  `ls -lat`
     *  `ls -l`
     *  `ls -l`
-* To log out of the remote server, use Ctrl + D or use the `exit` command
+* To log out of the remote server, use Ctrl + D or use the `exit` command.
 
 
 ### 4. Moving Files with `scp`
-* 
+* Create a file on your computer called `WhereAmI.java` and paste the following code into it:
+```
+class WhereAmI {
+    public static void main(String[] args) {
+        System.out.println(System.getProperty("os.name"));
+        System.out.println(System.getProperty("user.name"));
+        System.out.println(System.getProperty("user.home"));
+        System.out.println(System.getProperty("user.dir"));
+    }
+}
+```
+* Assuming you have Java installed, run this file on your computer (the client), using `javac` and `java` commands. You should get something like this: 
+**insert image here**
+* From the directory where you made the `WhereAmI.java` file, run this command with your username: `scp WhereAmI.java cs15lsp22zz@ieng6.ucsd.edu:~/`. Enter your password when prompted. This copies the file to the server!
+* Using `ssh`, log into `ieng6` again, and run the file from there using `javac` and `java`. Now, you should get something like this: 
+**insert image here**
+* To copy multiple files at once, just list the file names separated by spaces after the `scp` command and before the destination.
 
 
 ### 5. Setting an SSH Key
-* 
+* On your computer, run `ssh-keygen`. Copy and paste the file given in parentheses when prompted: 
+**insert image here**
+* **Do NOT add a passphrase when prompted.** Just hit 'enter' when prompted both times.
+    * You should get messages that indicate this process was successful, followed by a randomart image for the public key.
+* To copy the public key to the `.ssh` directory of your account on the `ieng6` server, do the following:
+    * Log into the server and enter `mkdir .ssh`. Then log out of the server.
+    * On your computer, enter `scp /Users/<user-name>/.ssh/id_rsa.pub cs15lsp22zz@ieng6.ucsd.edu:~/.ssh/authorized_keys`. (The first part after the `scp` should be what you copied and pasted in step 1, with `.pub` added at the end).
+* Now you can `ssh` and `scp` from your computer to the server without entering your password.
 
 
 ### 6. Optimizing Remote Running
