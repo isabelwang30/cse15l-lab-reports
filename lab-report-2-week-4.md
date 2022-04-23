@@ -53,6 +53,6 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String ind
 ```
 * Changes made:
 
-*insert screenshot here*
+![code change diff](https://user-images.githubusercontent.com/103291789/164938650-4b0ae50d-e178-4b2d-b8b7-8302c64dc565.jpeg)
 
 * The symptom in this case was that a "link" was added to the list, even though it wasn't in proper Markdown format (the pairs of brackets and parenthese were not back-to-back). The bug causing this was the method not confirming that the closing bracket was immediately preceding the opening parentheses. The failure-inducing input (test-file4.md) allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
