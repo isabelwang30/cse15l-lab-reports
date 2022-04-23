@@ -6,8 +6,6 @@ In this lab report, we will look at three changes made to the `getLinks()` metho
 ---
 ### 1. Wrongly Adding Image Links 
 
-![code change diff](https://user-images.githubusercontent.com/103291789/164933944-5bab024a-d9b7-4484-a492-76753174b6d0.jpeg)
-
 * [Failure-inducing input](https://github.com/isabelwang30/markdown-parser/blob/main/test-file2.md)
 * Symptom (unexpected output): 
 ```
@@ -17,4 +15,8 @@ In this lab report, we will look at three changes made to the `getLinks()` metho
 ```
 [https://alink.com, anotherlink.html]
 ```
+* Changes made: 
+
+![code change diff](https://user-images.githubusercontent.com/103291789/164934102-1344e1a8-f126-49ec-aa2f-81772e63b3b9.jpeg)
+
 * The symptom in this case is an image link being wrongly added to the returned list. This was caused by a bug: not confirming that the open bracket (`[`) doesn't have an exclamation mark (`!`) immediately preceding it, before adding the substring within the parentheses to the list. The failure-inducing input (test-file2.md), allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
