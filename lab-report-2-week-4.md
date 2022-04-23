@@ -17,7 +17,7 @@ In this lab report, we will look at three changes made to the `getLinks()` metho
 ```
 * Changes made: 
 
-![code change diff](https://user-images.githubusercontent.com/103291789/164934102-1344e1a8-f126-49ec-aa2f-81772e63b3b9.jpeg)
+![code change diff](https://user-images.githubusercontent.com/103291789/164939007-eae000f5-67fc-42d9-a305-e59bdb6a92e1.jpeg)
 
 * The symptom in this case was an image link being wrongly added to the returned list. This was caused by a bug: not confirming that the open bracket (`[`) doesn't have an exclamation mark (`!`) immediately preceding it, before adding the substring within the parentheses to the list. The failure-inducing input (test-file2.md) allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
 
@@ -35,7 +35,7 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String ind
 ```
 * Changes made:
 
-![code change diff](https://user-images.githubusercontent.com/103291789/164935795-9c64ed92-d7c6-4d83-8d62-c4968fbf3da3.jpeg)
+![code change diff](https://user-images.githubusercontent.com/103291789/164939329-fdfcccdf-fa7f-42d7-a21e-e1ca61b93df7.jpeg)
 
 * The symptom in this case was a `StringIndexOutOfBoundsException` being thrown when there were empty lines at the end of the input file. The error message indicated that the program was trying to index a string at index -2, which is an error in Java. The bug causing this was that the `indexOf()` method returns `-1` when the specified substring is not found starting at the given index. Then, the code block that checks for an image link subtracts 1 from the `openBracket` index (which in this case is -1), which leads to the attempted indexing at index -2. The failure-inducing input (test-file2.md) allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
 
@@ -53,6 +53,6 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String ind
 ```
 * Changes made:
 
-![code change diff](https://user-images.githubusercontent.com/103291789/164938650-4b0ae50d-e178-4b2d-b8b7-8302c64dc565.jpeg)
+![code change diff](https://user-images.githubusercontent.com/103291789/164939476-a3d070db-2a36-4f59-a7c4-35799c5274e5.jpeg)
 
 * The symptom in this case was that a "link" was added to the list, even though it wasn't in proper Markdown format (the pairs of brackets and parenthese were not back-to-back). The bug causing this was the method not confirming that the closing bracket was immediately preceding the opening parentheses. The failure-inducing input (test-file4.md) allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
