@@ -1,7 +1,7 @@
 # Lab Report 2
 ## Incremental Development, Bugs, and Symptoms
 ---
-In this lab report, we will look at three changes made to the `getLinks()` method to address bugs. The method, given a Markdown file, returns a list of all the webpage links present *in Markdown format*, ie: \[text to display](link).
+In this lab report, we will look at three changes made to the `getLinks()` method to address bugs. The method, given a Markdown file, returns a list of all the webpage links present *in Markdown format*, ie: `[text to display](link)`.
 
 ---
 ### 1. Wrongly Adding Image Links 
@@ -19,7 +19,7 @@ In this lab report, we will look at three changes made to the `getLinks()` metho
 
 ![code change diff](https://user-images.githubusercontent.com/103291789/164934102-1344e1a8-f126-49ec-aa2f-81772e63b3b9.jpeg)
 
-* The symptom in this case was an image link being wrongly added to the returned list. This was caused by a bug: not confirming that the open bracket (`[`) doesn't have an exclamation mark (`!`) immediately preceding it, before adding the substring within the parentheses to the list. The failure-inducing input (test-file2.md), allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
+* The symptom in this case was an image link being wrongly added to the returned list. This was caused by a bug: not confirming that the open bracket (`[`) doesn't have an exclamation mark (`!`) immediately preceding it, before adding the substring within the parentheses to the list. The failure-inducing input (test-file2.md) allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
 
 
 ### 2. Empty Lines at the End of the File
@@ -35,6 +35,6 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String ind
 ```
 * Changes made:
 
-*insert screenshot here*
+![code change diff](https://user-images.githubusercontent.com/103291789/164935795-9c64ed92-d7c6-4d83-8d62-c4968fbf3da3.jpeg)
 
-* The symptom in this case was a `StringIndexOutOfBoundsException` being thrown when there were empty lines at the end of the input file. The error message indicated that the program was trying to index a string at index -2, which is an error in Java. The bug causing this was that the `indexOf()` method returns `-1` when the specified substring is not found starting at the given index. Then, the code block that checks for an image link subtracts 1 from the `openBracket` index (which in this case is -1), which leads to the attempted indexing at index -2. The failure-inducing input (test-file2.md), allowed me again to see the symptom, which then led me to searching for, finding, and fixing the bug.
+* The symptom in this case was a `StringIndexOutOfBoundsException` being thrown when there were empty lines at the end of the input file. The error message indicated that the program was trying to index a string at index -2, which is an error in Java. The bug causing this was that the `indexOf()` method returns `-1` when the specified substring is not found starting at the given index. Then, the code block that checks for an image link subtracts 1 from the `openBracket` index (which in this case is -1), which leads to the attempted indexing at index -2. The failure-inducing input (test-file2.md) allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
