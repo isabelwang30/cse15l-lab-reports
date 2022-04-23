@@ -38,3 +38,21 @@ Exception in thread "main" java.lang.StringIndexOutOfBoundsException: String ind
 ![code change diff](https://user-images.githubusercontent.com/103291789/164935795-9c64ed92-d7c6-4d83-8d62-c4968fbf3da3.jpeg)
 
 * The symptom in this case was a `StringIndexOutOfBoundsException` being thrown when there were empty lines at the end of the input file. The error message indicated that the program was trying to index a string at index -2, which is an error in Java. The bug causing this was that the `indexOf()` method returns `-1` when the specified substring is not found starting at the given index. Then, the code block that checks for an image link subtracts 1 from the `openBracket` index (which in this case is -1), which leads to the attempted indexing at index -2. The failure-inducing input (test-file2.md) allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
+
+
+### 3. Brackets and Parentheses Far Apart in the File
+
+* [Failure-inducing input](https://github.com/isabelwang30/markdown-parser/blob/main/test-file4.md)
+* Symptom (unexpected output):
+```
+[link.com]
+```
+* Expected output:
+```
+[]
+```
+* Changes made:
+
+*insert screenshot here*
+
+* The symptom in this case was that a "link" was added to the list, even though it wasn't in proper Markdown format (the pairs of brackets and parenthese were not back-to-back). The bug causing this was the method not confirming that the closing bracket was immediately preceding the opening parentheses. The failure-inducing input (test-file4.md) allowed me to see the symptom, which then led me to searching for, finding, and fixing the bug.
