@@ -9,7 +9,7 @@ In this lab report, we will go over the following topics:
 ---
 ### 1. Streamlining `ssh` Configuration<a name="part1"></a>
 * Navigate to ~/.ssh/config from your terminal using `cd ~/.ssh/config`.
-    * If the `config` file doesn't exist, you must first create it. From within the `.ssh` directory, type `touch config` to create the `config` file.
+    * If the `config` file doesn't exist, you must first create it. From within the `.ssh` directory, type `touch config` to create the `config` file:
 
     ![creating config file](https://user-images.githubusercontent.com/103291789/167241506-03ddbc02-8b8b-45c3-8c0c-dbfc24edba85.jpeg)
 
@@ -21,8 +21,8 @@ In this lab report, we will go over the following topics:
 * Paste the following in the file, replacing the `zzz` with your username:
 ```
 Host ieng6
-HostName ieng6.ucsd.edu
-User cs15lsp22zzz
+   HostName ieng6.ucsd.edu
+   User cs15lsp22zzz
 ```
 
 * When done editing, press the `ESC` key to return to Normal mode. To save, type `:w`, and to exit, type `:q` (you can type `:wq` to save and exit at the same time). 
@@ -32,7 +32,7 @@ User cs15lsp22zzz
 ![streamlined log in](https://user-images.githubusercontent.com/103291789/167241587-19c819be-b8ac-4052-9ce4-6b46cca957b7.jpeg)
 
 
-* Here is an example of copying a file from your local computer to the home directory of a remote server, using the newly streamlined nickname:
+* Here is an example of copying a file (FileToCopy.java) from your local computer to the home directory of a remote server, using the newly streamlined nickname:
 
 ![scp with nickname](https://user-images.githubusercontent.com/103291789/167241598-67e3b831-57d0-4344-b0e1-c59949ee1b02.jpeg)
 
