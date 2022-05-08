@@ -61,17 +61,17 @@ Host ieng6
     * The `-r` tells the `scp` to work recursively, the `.` is the current working directory (the directory to be copied), the `ieng6` is the nickname for the remote server to be copied to, and the `~/markdown-parse` is the path where the directory will be copied to on ieng6.
 * Here is an example of copying an entire directory to a new directory called `markdown-parser` in my ieng6 account:
 
-**insert screenshot here**
+![scp -r (entire directory)](https://user-images.githubusercontent.com/103291789/167284737-577ea5a6-b7ea-4e47-b37f-78f5ec10be86.jpeg)
 (there were many other files copied over that aren't included in the screenshot)
 
 * Here is what it looks like to then log into the remote server and compile and run the Test file in the directory:
 
-**insert screenshot here**
+![running copied tests from ieng6](https://user-images.githubusercontent.com/103291789/167284767-1fc0bd4f-7ecb-4ad9-afe4-77acabc7be09.jpeg)
 
 * All the commands can also be combined into one line, but in order to run the Test file successfully, a couple changes need to be made.
     1. Instead of copying the entire directory, only copy files ending with `.java` or `.md`, and everythig in the `lib` directory (JUnit files).
     2. Because you are no longer copying the entire directory, the destination directory in the remote server needs to exist prior to using `scp -r`; a new directory won't be automatically created with this `scp -r` command.
-    3. Then, to compile and run the Test file replace the `javac` with `/software/CSE/oracle-java-17/jdk-17.0.1/bin/javac`, and replace the `java` with `/software/CSE/oracle-java-17/jdk-17.0.1/bin/java`.
-* Here is what combining all the commands looked like for me:
+    3. Then, to compile and run the Test file, replace the `javac` with `/software/CSE/oracle-java-17/jdk-17.0.1/bin/javac`, and replace the `java` with `/software/CSE/oracle-java-17/jdk-17.0.1/bin/java`.
+* Here is what combining all the commands looked like for me (after deleting the `markdown-parse` directory created with the previous `scp -r` command:
 
-**insert screenshot here**
+![C7987EEB-B2E6-4F2D-8BCA-CD759AD14756](https://user-images.githubusercontent.com/103291789/167284782-810c8841-a466-440a-9190-84b4846593f0.jpeg)
