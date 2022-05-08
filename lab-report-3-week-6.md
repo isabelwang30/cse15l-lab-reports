@@ -57,3 +57,21 @@ Host ieng6
 * Here is a [link](https://github.com/isabelwang30/markdown-parser/commit/512164731c6fe532a85d3e1a9908852129daddeb) to the resulting commit.
 
 ### 3. Copying Entire Directories with `scp -r`<a name="part3"></a>
+* To recursively copy an entire directory – which includes all the files and directories within it, as well as all the files and directories within those, etc – use the a command such as `scp -r . ieng6:~/markdown-parse`.
+    * The `-r` tells the `scp` to work recursively, the `.` is the current working directory (the directory to be copied), the `ieng6` is the nickname for the remote server to be copied to, and the `~/markdown-parse` is the path where the directory will be copied to on ieng6.
+* Here is an example of copying an entire directory to a new directory called `markdown-parser` in my ieng6 account:
+
+**insert screenshot here**
+(there were many other files copied over that aren't included in the screenshot)
+
+* Here is what it looks like to then log into the remote server and compile and run the Test file in the directory:
+
+**insert screenshot here**
+
+* All the commands can also be combined into one line, but in order to run the Test file successfully, a couple changes need to be made.
+    1. Instead of copying the entire directory, only copy files ending with `.java` or `.md`, and everythig in the `lib` directory (JUnit files).
+    2. Because you are no longer copying the entire directory, the destination directory in the remote server needs to exist prior to using `scp -r`; a new directory won't be automatically created with this `scp -r` command.
+    3. Then, to compile and run the Test file replace the `javac` with `/software/CSE/oracle-java-17/jdk-17.0.1/bin/javac`, and replace the `java` with `/software/CSE/oracle-java-17/jdk-17.0.1/bin/java`.
+* Here is what combining all the commands looked like for me:
+
+**insert screenshot here**
