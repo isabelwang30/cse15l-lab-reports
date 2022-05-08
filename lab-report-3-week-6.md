@@ -41,15 +41,16 @@ Host ieng6
 * Go to Github and go to your accound settings. Under the Access section, click **SSH and GPG keys**. Click **New SSH key**, and then give the key a title, such as `ieng6`. Then paste the contents of the public key into the **Key** section, and click **Add SSH key**. 
 * This is where the public key is stored in Github:
 
-**insert screenshot here**
+![SSH key in Github](https://user-images.githubusercontent.com/103291789/167282139-c4177299-3811-4504-b4d0-8eb48c40be4c.jpeg)
 
-* The public and private keys are stored in the hidden `.ssh` folder in your `ieng6` account:
+* The public and private keys are stored in the hidden `.ssh` folder in your ieng6 account:
 
-**insert screenshot here**
+![.ssh in ieng6](https://user-images.githubusercontent.com/103291789/167282151-5dbb4ba0-e37c-43d5-89a3-beb2e66dc9d1.jpeg)
 
 * Now you should be able to commit and push changes to Github from the ieng6 remote server. Here is an example of what that looks like:
 
-**insert screenshot here**
+![change to SSH url](https://user-images.githubusercontent.com/103291789/167282164-7761e01f-c89d-4839-b2bc-8436a4d54676.jpeg)
+![commit and push from ieng6](https://user-images.githubusercontent.com/103291789/167282175-3b3fbf8d-7786-44d0-8f00-80319ed8e7d2.jpeg)
 
 * First make sure the remote URL is the SSH one, not the HTTPS one.
 * The edit I made to MarkdownParseTest.java was appending "test" to the file.
