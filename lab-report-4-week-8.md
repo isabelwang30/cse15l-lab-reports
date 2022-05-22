@@ -10,18 +10,18 @@ In this lab report, we will look at running three test methods for two different
 * This is the first markdown snippet being passed in: 
 
 ```
-```[a link`](url.com)``
+`[a link`](url.com)
 
-``[another link](`google.com)```
+[another link](`google.com)`
 
-``[`cod[e`](google.com)``
+[`cod[e`](google.com)
 
-``[`code]`](ucsd.edu)``
+[`code]`](ucsd.edu)
 ```
 * This is the expected output (from using VSCode's preview):
 
 ```
-``["`google.com", "google.com", "ucsd.edu"]``
+["`google.com", "google.com", "ucsd.edu"]
 ```
 ![snippet1 preview](https://user-images.githubusercontent.com/103291789/169705323-269e1566-583e-408b-a1ea-0ba32df153bc.jpeg)
 
