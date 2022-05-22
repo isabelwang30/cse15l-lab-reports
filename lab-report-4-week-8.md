@@ -1,7 +1,7 @@
 # Lab Report 4
-## JUnit Tests for 2 Implementations of the `getLinks()` Method
+## JUnit Tests for Two Implementations of the `getLinks()` Method
 ---
-In this lab report, we will look at running three test methods for two different implementations of the `getLinks()` method, which is discussed in [Lab Report 2](https://isabelwang30.github.io/cse15l-lab-reports/lab-report-2-week-4.html). The two implementations of `getLinks()` we will look at are:
+In this lab report, we will look at running three test methods for two different implementations of the `getLinks()` method, which is discussed in [Lab Report 2](https://isabelwang30.github.io/cse15l-lab-reports/lab-report-2-week-4.html). The two implementations we will look at are:
 1. My own, located in my [markdown-parser repository](https://github.com/isabelwang30/markdown-parser).
 2. One from lab group 6, located in [Leah Kuruvila's markdown-parser repository](https://github.com/leahkuruvila/markdown-parser).
 
@@ -37,10 +37,9 @@ In this lab report, we will look at running three test methods for two different
 
 ![test1 other implementation](https://user-images.githubusercontent.com/103291789/169705385-fcd60e9e-3ddb-46f8-ae5d-81e3aea055e0.jpeg)
 
+* A code change that would make my implementation work for snippet 1 and all related cases that use inline code with backticks would probably require less than 10 lines. First, just like with brackets and parentheses, I would search for the indices of opening and closing backticks. Then, using the stored indices, if the index of either bracket is in between the indices of the opening and closing backticks, skip those bracket(s) and find the next one(s) in the text.
 
-// TODO: answer code change question
-
-### Test 2: Link Formatting Containing Nested Parentheses and Brackets, and Escaped Brackets
+### Test 2: Link Formatting Containing Nested Parentheses, Brackets, and Escaped Brackets
 * This is the second markdown snippet being passed in: 
 
 ```
@@ -69,8 +68,9 @@ In this lab report, we will look at running three test methods for two different
 
 ![test2 other implementation](https://user-images.githubusercontent.com/103291789/169705475-3b190e6c-fdfd-4742-a544-96cca2804739.jpeg)
 
-
-// TODO: answer code change question
+* A code change that would make my implementation work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets would probably require more than 10 lines.
+    * For nested brackets and parentheses, some sort of stack could be used to keep track of pairs of brackets and parentheses, and then from there, determine if there is a link to be added.
+    * For nested escaped brackets, if the character at the index before a bracket is a backslash(\\), skip that bracket and look for the next opening/closing bracket.
 
 ### Test 3: Link Formatting Containing Line Breaks and a Lot of Text in the Link Name
 * This is the third markdown snippet being passed in: 
@@ -120,5 +120,4 @@ And then there's more text
 
 ![test3 other implementation](https://user-images.githubusercontent.com/103291789/169705551-33f4ee46-c754-41ea-980a-eb5429c28450.jpeg)
 
-
-// TODO: answer code change question
+* A code change that would make my implementation work for snippet 3 and all related cases that have newlines in brackets and parentheses would probably take less than 10 lines. I would need to use `.trim()` on the String when adding a link to the links ArrayList to get rid of any spaces before or after the link.
