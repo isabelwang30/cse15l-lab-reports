@@ -21,7 +21,7 @@ In this lab report, we will look at running three test methods for two different
 * This is the expected output (from using VSCode's preview):
 
 ```
-["`google.com", "google.com", "ucsd.edu"]
+[`google.com, google.com, ucsd.edu]
 ```
 ![snippet1 preview](https://user-images.githubusercontent.com/103291789/169705323-269e1566-583e-408b-a1ea-0ba32df153bc.jpeg)
 
@@ -52,7 +52,7 @@ In this lab report, we will look at running three test methods for two different
 * This is the expected output (from using VSCode's preview):
 
 ```
-["a.com", "a.com(())", "example.com"]
+[a.com, a.com(()), example.com]
 ```
 ![snippet2 preview](https://user-images.githubusercontent.com/103291789/169705394-7fbc13e6-f403-4b41-a40e-e81e081ce47e.jpeg)
 
@@ -68,7 +68,7 @@ In this lab report, we will look at running three test methods for two different
 
 ![test2 other implementation](https://user-images.githubusercontent.com/103291789/169705475-3b190e6c-fdfd-4742-a544-96cca2804739.jpeg)
 
-* A code change that would make my implementation work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets would probably require more than 10 lines.
+* A code change that would make my implementation work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets would probably require less than 10 lines.
     * For nested brackets and parentheses, I could use some sort of stack to keep track of pairs of brackets and parentheses, and then from there, determine if there is a link to be added.
     * For nested escaped brackets, if the character at the index before a bracket is a backslash(\\), skip that bracket and look for the next opening/closing bracket.
 
@@ -104,7 +104,7 @@ And then there's more text
 * This is the expected output (from using VSCode's preview):
 
 ```
-["https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule"]
+[https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule]
 ```
 ![snippet3 preview](https://user-images.githubusercontent.com/103291789/169705518-7b2e85a8-a3c8-4c3a-a83e-793e5bba196a.jpeg)
 
@@ -120,4 +120,4 @@ And then there's more text
 
 ![test3 other implementation](https://user-images.githubusercontent.com/103291789/169713720-3b93ca4a-123e-4ef7-82d3-bab056d54179.jpeg)
 
-* A code change that would make my implementation work for snippet 3 and all related cases that have newlines in brackets and parentheses would probably take less than 10 lines. For line breaks in the title text, if there are two consecutive newline characters (\n\n) between the opening and closing brackets, don't add the link. For spaces between the end of a link and the closing parentheses, if there is a space before the closing parentheses, don't add the link. To get rid of any newlines before or after the link, I would use `.trim()` on the String when adding a link to the `toReturn` ArrayList.
+* A code change that would make my implementation work for snippet 3 and all related cases that have newlines in brackets and parentheses would probably take less than 10 lines. For line breaks in the title text, if there are two consecutive newline characters (`\n\n`) between the opening and closing brackets, don't add the link. For spaces between the end of a link and the closing parentheses, if there is a space before the closing parentheses, don't add the link. To get rid of any newlines before or after the link, I would use `.trim()` on the String when adding a link to the `toReturn` ArrayList.
