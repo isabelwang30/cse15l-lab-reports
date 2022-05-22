@@ -8,20 +8,18 @@ In this lab report, we will look at running three test methods for two different
 ---
 ### Test 1: Link Formatting Containing Backticks (`) for Inline Code
 * This is the first markdown snippet being passed in: 
-```
-`[a link`](url.com)
 
-[another link](`google.com)`
+    `[a link`](url.com)
 
-[`cod[e`](google.com)
+    [another link](`google.com)`
 
-[`code]`](ucsd.edu)
-```
+    [`cod[e`](google.com)
+
+    [`code]`](ucsd.edu)
 
 * This is the expected output (from using VSCode's preview):
-```
-["`google.com", "google.com", "ucsd.edu"]
-```
+
+    ["`google.com", "google.com", "ucsd.edu"]
 
 ![snippet1 preview](https://user-images.githubusercontent.com/103291789/169705323-269e1566-583e-408b-a1ea-0ba32df153bc.jpeg)
 
@@ -29,11 +27,9 @@ In this lab report, we will look at running three test methods for two different
 
 ![snippet1 test](https://user-images.githubusercontent.com/103291789/169705353-72c7df39-be94-4a26-ae8d-2cd2386db93b.jpeg)
 
-
 * The test failed when running on my implementation. This is the output that shows the failure:
 
 ![test1 my implementation](https://user-images.githubusercontent.com/103291789/169705366-09bdd19f-cf55-43c6-b198-dc6378a04365.jpeg)
-
 
 * The test also failed when running on the other implementation. This is the output that shows the failure:
 
@@ -44,26 +40,22 @@ In this lab report, we will look at running three test methods for two different
 
 ### Test 2: Link Formatting Containing Nested Parentheses and Brackets, and Escaped Brackets
 * This is the second markdown snippet being passed in: 
-```
-[a [nested link](a.com)](b.com)
 
-[a nested parenthesized url](a.com(()))
+    [a [nested link](a.com)](b.com)
 
-[some escaped \[ brackets \]](example.com)
-```
+    [a nested parenthesized url](a.com(()))
+
+    [some escaped \[ brackets \]](example.com)
 
 * This is the expected output (from using VSCode's preview):
-```
-["a.com", "a.com(())", "example.com"]
-```
+
+    ["a.com", "a.com(())", "example.com"]
 
 ![snippet2 preview](https://user-images.githubusercontent.com/103291789/169705394-7fbc13e6-f403-4b41-a40e-e81e081ce47e.jpeg)
-
 
 * This is the test method I wrote for the snippet:
 
 ![snippet2 test](https://user-images.githubusercontent.com/103291789/169705442-523b4d11-569b-410f-9085-30aa29adef0f.jpeg)
-
 
 * The test failed when running on my implementation. This is the output that shows the failure:
 
@@ -78,37 +70,35 @@ In this lab report, we will look at running three test methods for two different
 
 ### Test 3: Link Formatting Containing Line Breaks and a Lot of Text in the Link Name
 * This is the third markdown snippet being passed in: 
-```
-[this title text is really long and takes up more than 
-one line
 
-and has some line breaks](
-    https://www.twitter.com
-)
+    [this title text is really long and takes up more than 
+    one line
 
-[this title text is really long and takes up more than 
-one line](
-https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule
-)
+    and has some line breaks](
+        https://www.twitter.com
+    )
 
-
-[this link doesn't have a closing parenthesis](github.com
-
-And there's still some more text after that.
-
-[this link doesn't have a closing parenthesis for a while](https://cse.ucsd.edu/
+    [this title text is really long and takes up more than 
+    one line](
+    https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule
+    )
 
 
+    [this link doesn't have a closing parenthesis](github.com
 
-)
+    And there's still some more text after that.
 
-And then there's more text
-```
+    [this link doesn't have a closing parenthesis for a while](https://cse.ucsd.edu/
+
+
+
+    )
+
+    And then there's more text
 
 * This is the expected output (from using VSCode's preview):
-```
-["https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "https://cse.ucsd.edu/"]
-```
+
+    ["https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "https://cse.ucsd.edu/"]
 
 ![snippet3 preview](https://user-images.githubusercontent.com/103291789/169705518-7b2e85a8-a3c8-4c3a-a83e-793e5bba196a.jpeg)
 
@@ -116,11 +106,9 @@ And then there's more text
 
 ![snippet3 test](https://user-images.githubusercontent.com/103291789/169705527-6fc35ebd-e14a-426f-92b1-cba775842203.jpeg)
 
-
 * The test failed when running on my implementation. This is the output that shows the failure:
 
 ![test3 my implementation](https://user-images.githubusercontent.com/103291789/169705536-150e4a60-2928-448e-8d41-edb588c5bc25.jpeg)
-
 
 * The test also failed when running on the other implementation. This is the output that shows the failure:
 
