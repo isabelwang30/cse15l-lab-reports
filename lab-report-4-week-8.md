@@ -69,7 +69,7 @@ In this lab report, we will look at running three test methods for two different
 ![test2 other implementation](https://user-images.githubusercontent.com/103291789/169705475-3b190e6c-fdfd-4742-a544-96cca2804739.jpeg)
 
 * A code change that would make my implementation work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets would probably require more than 10 lines.
-    * For nested brackets and parentheses, some sort of stack could be used to keep track of pairs of brackets and parentheses, and then from there, determine if there is a link to be added.
+    * For nested brackets and parentheses, I could use some sort of stack to keep track of pairs of brackets and parentheses, and then from there, determine if there is a link to be added.
     * For nested escaped brackets, if the character at the index before a bracket is a backslash(\\), skip that bracket and look for the next opening/closing bracket.
 
 ### Test 3: Link Formatting Containing Line Breaks and a Lot of Text in the Link Name
@@ -104,20 +104,20 @@ And then there's more text
 * This is the expected output (from using VSCode's preview):
 
 ```
-["https://www.twitter.com", "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "https://cse.ucsd.edu/"]
+["https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule"]
 ```
 ![snippet3 preview](https://user-images.githubusercontent.com/103291789/169705518-7b2e85a8-a3c8-4c3a-a83e-793e5bba196a.jpeg)
 
 * This is the test method I wrote for the snippet:
 
-![snippet3 test](https://user-images.githubusercontent.com/103291789/169705527-6fc35ebd-e14a-426f-92b1-cba775842203.jpeg)
+![snippet3 test](https://user-images.githubusercontent.com/103291789/169713685-37b43b84-98ef-4e72-9655-d95f800c392c.jpeg)
 
 * The test failed when running on my implementation. This is the output that shows the failure:
 
-![test3 my implementation](https://user-images.githubusercontent.com/103291789/169705536-150e4a60-2928-448e-8d41-edb588c5bc25.jpeg)
+![test3 my implementation](https://user-images.githubusercontent.com/103291789/169713700-0330d684-6783-4fa7-b285-e8abaf344f22.jpeg)
 
 * The test also failed when running on the other implementation. This is the output that shows the failure:
 
-![test3 other implementation](https://user-images.githubusercontent.com/103291789/169705551-33f4ee46-c754-41ea-980a-eb5429c28450.jpeg)
+![test3 other implementation](https://user-images.githubusercontent.com/103291789/169713720-3b93ca4a-123e-4ef7-82d3-bab056d54179.jpeg)
 
-* A code change that would make my implementation work for snippet 3 and all related cases that have newlines in brackets and parentheses would probably take less than 10 lines. I would need to use `.trim()` on the String when adding a link to the links ArrayList to get rid of any spaces before or after the link.
+* A code change that would make my implementation work for snippet 3 and all related cases that have newlines in brackets and parentheses would probably take less than 10 lines. For line breaks in the title text, if there are two consecutive newline characters (\n\n) between the opening and closing brackets, don't add the link. For spaces between the end of a link and the closing parentheses, if there is a space before the closing parentheses, don't add the link. To get rid of any newlines before or after the link, I would use `.trim()` on the String when adding a link to the `toReturn` ArrayList.
