@@ -1,3 +1,4 @@
+[< Home](https://isabelwang30.github.io/cse15l-lab-reports/)
 # Lab Report 1
 ## VSCode, Basic UNIX Commands, and Remote Access on MacOS
 ---

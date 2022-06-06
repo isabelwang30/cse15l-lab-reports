@@ -1,3 +1,4 @@
+[< Home](https://isabelwang30.github.io/cse15l-lab-reports/)
 # Lab Report 3
 ## Streamlining `ssh`, Remote Github Access, Copying Entire Directories
 --- 

@@ -1,3 +1,4 @@
+[< Home](https://isabelwang30.github.io/cse15l-lab-reports/)
 # Lab Report 2
 ## Incremental Development, Bugs, and Symptoms
 ---
